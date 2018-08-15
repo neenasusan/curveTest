@@ -24,10 +24,11 @@ describe('Payne Dentistry App', () => {
 describe('Patient management', () => {
   const firstName = 'Jeremy';
   const lastName = 'Burnett';
+const name = lastName+', '+firstName;
 
   const year = '2018';
   const month = '08';
-  const date = '15';
+  const date = '18';
   const day = year+'-'+month+'-'+date;
 
   const hour = '11';
@@ -80,11 +81,11 @@ it('should create a new Appointment for the selected patient', async () => {
 
  it('should show the appointment on the appropriate day', async () => {   
     await schedulePage.navigateToSchedulePage(day);
-    await schedulePage.selectAppointment();
-    const title = schedulePage.selectAppointment();
-    expect(title).toContain('Appointment');
-    await schedulePage.navigateTo();  
+    await schedulePage.checkForCandidate();
+    const title = schedulePage.checkForCandidate();
+    expect(title).toContain(name);
+    await schedulePage.navigateTo();
+    browser.sleep(6000); 
   });
-
 
 });

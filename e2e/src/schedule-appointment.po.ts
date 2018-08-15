@@ -44,9 +44,8 @@ export class ScheduleAppointmentPage{
     	return browser.get(`/schedule/${value}`);	
     }
 
-	async selectAppointment() {
-    	await element(by.className('col-3 col-md-5 time')).click();
-    	return await browser.findElement(by.tagName('h3')).getText();
-    	await element(by.buttonText('Cancel')).click();
-  	}
+  async checkForCandidate() {
+     await element(by.className('col-8 col-md-6 name')).click(); 
+     return await browser.findElement(by.tagName('h3')).getText();
+    }	
 }
