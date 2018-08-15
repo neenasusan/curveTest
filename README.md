@@ -73,3 +73,9 @@ then connect the debugger to the web socket URI printed to the console.  Suggest
 ## Linting
 
 Run `npm run lint` to lint both the client and server code.  Angular code is linted using tslint for TypeScript.  Express code is linted using eslint.
+
+## To run code (each terminal)
+
+1. npm start
+2. webdriver-manager start
+3. protractor config file

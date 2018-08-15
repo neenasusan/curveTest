@@ -15,7 +15,6 @@ describe('Payne Dentistry App', () => {
 
   it(`should start by displaying today's schedule`, () => {
     page.navigateTo();
-
     const paragraphText = page.getParagraphText();
     expect(paragraphText).toContain('Schedule');
     expect(paragraphText).toContain(moment().format('LL'));
@@ -30,9 +29,6 @@ describe('Patient management', () => {
   const month = '08';
   const date = '15';
   const day = year+'-'+month+'-'+date;
-  
-
-
 
   const hour = '11';
   const minute = '30';
@@ -48,13 +44,11 @@ describe('Patient management', () => {
     createPage = new CreatePatientPage();
     listPage = new PatientListPage();
     detailPage = new PatientDetailPage();
-    schedulePage = new ScheduleAppointmentPage();
-   
+    schedulePage = new ScheduleAppointmentPage();  
   });
 
   it('should create a new patient', async () => {
     await createPage.navigateTo();
-
     await createPage.setFirstName(firstName);
     await createPage.setLastName(lastName);
     await createPage.setBirthDate('1996-04-07');
@@ -86,7 +80,6 @@ it('should create a new Appointment for the selected patient', async () => {
 
  it('should show the appointment on the appropriate day', async () => {   
     await schedulePage.navigateToSchedulePage(day);
- 
     await schedulePage.selectAppointment();
     const title = schedulePage.selectAppointment();
     expect(title).toContain('Appointment');
